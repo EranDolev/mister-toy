@@ -6,6 +6,10 @@ const toyStore = {
     state() {
         return {
             toys: [],
+            filter: {
+                name: '',
+                // by: 'ALL',
+            },
         }
     },
     mutations: {
@@ -27,6 +31,10 @@ const toyStore = {
             // showSuccessMsg(msg)
 
         },
+        setFilter(state, { filter }) {
+            state.filter = { ...state.filter, ...filter }
+            console.log('stat.filter:', state.filter)
+        },
     },
     actions: {
         loadToys({ commit }) {
@@ -42,7 +50,17 @@ const toyStore = {
         getMsg(state) {
         return state.msg
         },
-        toys({ toys }) {return toys},
+        // toys({ toys }) {return toys},
+        toys({ toys, filter }) {
+            if (!filter) return toys
+
+            const regex = new RegExp(filter.name, 'i')
+            toys = toys.filter(toy => {
+                return regex.test(toy.name)
+            })
+
+            return toys
+        },
     },
     modules: {}
 }
