@@ -27,11 +27,11 @@ function getById(toyId) {
 }
 
 function save(toyToSave) {
-    // if (toyToSave._id) return storageService.put(KEY, toyToSave)
-    // else return storageService.post(KEY, toyToSave)
+    if (toyToSave._id) return storageService.put(KEY, toyToSave)
+    else return storageService.post(KEY, toyToSave)
 
-    // if (toyToSave._id) return httpService.put(BASE_URL, toyToSave).then(res => res.data)
-    // else return httpService.post(BASE_URL, toyToSave).then(res => res.data)
+    if (toyToSave._id) return httpService.put(BASE_URL, toyToSave).then(res => res.data)
+    else return httpService.post(BASE_URL, toyToSave).then(res => res.data)
 }
 
 function remove(toyId) {
