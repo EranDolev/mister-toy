@@ -4,11 +4,12 @@
  </h1>
  {{ msg }}
 
-    <toy-list v-if="toys" :toys="toys"></toy-list>
+    <ToyList v-if="toys" :toys="toys"></ToyList>
 
 </template>
 
 <script>
+import ToyList from '../components/ToyList.vue'
 export default {
  name: 'ToyIndex',
  created() {
@@ -22,6 +23,9 @@ export default {
             return this.$store.getters.toys
         }
  },
+ components: {
+        ToyList,
+    },
 }
 </script>
 

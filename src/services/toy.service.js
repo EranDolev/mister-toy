@@ -22,8 +22,8 @@ function query(filter) {
 }
 
 function getById(toyId) {
-    // return storageService.getById(KEY, toyId)
-    // return httpService.get(BASE_URL, toyId).then(res => res.data)
+    return storageService.getById(KEY, toyId)
+    return httpService.get(BASE_URL, toyId).then(res => res.data)
 }
 
 function save(toyToSave) {
