@@ -15,7 +15,7 @@ function query(key, filter) {
     var toys = utilService.loadFromStorage(key)
     if (!toys || !toys.length) toys = _createToys(key)
     if (!filter) return Promise.resolve(toys)
-    return _filterToys(toys, filter)
+    return _filterToys(filter, toys)
 }
 
 function getById(key, toyId) {
@@ -52,4 +52,47 @@ function remove(key, toyId) {
     utilService.saveToStorage(key, toys)
     return Promise.resolve('removed')
 }
+
+// function _filterToys(toys, filterBy) {
+//     // const { labels, sortBy } = filterBy
+//     const filteredToys = toys.filter(toy => {
+
+//         if (filterBy.name) {
+//             const regex = new RegExp(filterBy.name, 'i')
+//             if (!regex.test(toy.name)) return false
+//         }
+
+//         // if (filterBy.inStock && !toy.inStock) {
+//         //     return false
+//         // }
+
+//         // if (labels.length) {
+//         //     const hasLabel = labels.some(label => toy.labels.includes(label))
+//         //     if (!hasLabel) return false
+//         // }
+//         return true
+//     })
+
+//     // if (sortBy.name) {
+//     //     toys = toys.sort((a, b) => a.name.localeCompare(b.name))
+//     // }
+//     // if (sortBy.price) {
+//     //     toys = toys.sort((a, b) => (a.price - b.price) * sortBy.diff)
+//     // }
+//     // if (sortBy.created) {
+//     //     toys = toys.sort((a, b) => (a.createAt - b.createAt) * sortBy.diff)
+//     // }
+
+//     return Promise.resolve(filteredToys)
+// }
+
+function _filterToys(filterBy, toys) {
+    if (!filterBy) return toys
+    const { name } = filterBy
+  
+    const regex = new RegExp(name, 'i')
+    toys = toys.filter(toys => regex.test(toys.name))
+  
+    return Promise.resolve(toys)
+  }
 

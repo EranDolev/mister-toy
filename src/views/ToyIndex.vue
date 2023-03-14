@@ -18,7 +18,7 @@ export default {
     },
     methods: {
         setFilter(filter) {
-            this.$store.commit({ type: 'setFilter', filter })
+            this.$store.dispatch({ type: 'loadToys', filter })
 
         },
     },
