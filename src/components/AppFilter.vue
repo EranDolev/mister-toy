@@ -1,7 +1,7 @@
 <template>
     <section class="app-filter">
-        <form @submit.prevent="handleSubmit">
-            <label htmlFor="name">Search by name</label>
+        <form class="center" @submit.prevent="handleSubmit">
+            <label htmlFor="name">Search by name: </label>
             <input type="text" name="name" v-model="filter.name" />
             <!-- <select name="by" v-model="filter.by">
                 <option value="ALL">All</option>
@@ -10,7 +10,7 @@
             </select> -->
             <button @click="handleSubmit">Search</button>
         </form>
-        <pre>{{ filter }}</pre>
+        <!-- <pre>{{ filter }}</pre> -->
     </section>
 </template>
 

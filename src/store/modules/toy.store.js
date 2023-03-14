@@ -1,4 +1,4 @@
-import { toyService } from '../../services/toy.service.js' 
+import { toyService } from '../../services/toy.service.js'
 
 export const toyStore = {
 
@@ -12,17 +12,17 @@ export const toyStore = {
     getters: {
         getMsg(state) {
             return state.msg
-            },
-            toys({ toys, filter }) {
-                if (!filter) return toys
-    
-                const regex = new RegExp(filter.name, 'i')
-                toys = toys.filter(toy => {
-                    return regex.test(toy.name)
-                })
-    
-                return toys
-            },
+        },
+        toys({ toys, filter }) {
+            if (!filter) return toys
+
+            const regex = new RegExp(filter.name, 'i')
+            toys = toys.filter(toy => {
+                return regex.test(toy.name)
+            })
+
+            return toys
+        },
     },
     mutations: {
         setToys(state, { toys }) {
@@ -43,6 +43,10 @@ export const toyStore = {
             // showSuccessMsg(msg)
 
         },
+        removeToy(state, { toyId }) {
+            const idx = state.toys.findIndex(toy => toy._id === toyId)
+            state.toys.splice(idx, 1)
+        },
         setFilter(state, { filter }) {
             state.filter = { ...state.filter, ...filter }
             console.log('stat.filter:', state.filter)
@@ -58,6 +62,13 @@ export const toyStore = {
                 .catch(err => {
                     console.log(err)
                 })
-        }
+        },
+        removeToy({ commit }, { toyId }) {
+            return toyService
+                .remove(toyId)
+                .then(() => {
+                    commit({ type: 'removeToy', toyId })
+                })
+        },
     }
 }

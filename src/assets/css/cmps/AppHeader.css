@@ -1,0 +1,10 @@
+header{
+    background-color: var(--clr0);
+    justify-content: space-between;
+}
+
+.main-nav{
+    width: 10em;
+    align-items: center;
+    margin: 10px
+}

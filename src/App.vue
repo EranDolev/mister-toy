@@ -1,7 +1,9 @@
 <template>
-  <AppHeader />
-  <RouterView />
-  <AppFooter />
+  <body>
+    <AppHeader />
+    <RouterView />
+    <AppFooter />
+  </body>
 </template>
 
 <script >

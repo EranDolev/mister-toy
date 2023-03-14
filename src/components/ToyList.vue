@@ -1,6 +1,6 @@
 
 <template>
-    <ul class="toy-list">
+    <ul class="toy-list flex">
         <ToyPreview 
         v-for="toy in toys" 
         :key="toy.id" 

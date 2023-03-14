@@ -1,0 +1,16 @@
+:root {
+
+    --clr0: #41a1f0; /* Base Site Color */
+    
+    
+    --shadow: rgba(0, 0, 0, 0.39); /* Notes Shadow */
+    --shadow2: rgba(0, 0, 0, 0.98); /* Header Shadow */
+    --shadow3: rgba(0, 0, 0, 0.4); /* Footer Shadow */
+  
+    --min-space: .3rem;
+    --med-space: .5rem;
+    --med2-space: .8rem;
+    --large-space: 1rem;
+    --xLarge-space: 2rem;
+    --xxLarge-space: 4rem;
+  } 

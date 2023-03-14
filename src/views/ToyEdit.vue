@@ -10,6 +10,7 @@
             <input type="text" name="name" v-model="toy.name" />
             <label for="price">Price</label>
             <input type="number" name="price" v-model="toy.price" />
+            <input v-model="toy.inStock" type="checkbox">
         </form>
         <pre>{{ toy }}</pre>
         <button @click="handleSubmit">Confirm</button>
@@ -30,9 +31,6 @@ export default {
                     this.toy = toy
                 })
             : toyService.getEmptyToy()
-                .then(toy => {
-                    this.toy = toy
-                })
 
     },
     data() {

@@ -1,5 +1,5 @@
 <template>
- <nav>
+ <nav class="main-nav flex space-between">
   <RouterLink to="/">Home</RouterLink>
   <RouterLink to="/about">About</RouterLink>
   <RouterLink to="/toy">Toy</RouterLink>

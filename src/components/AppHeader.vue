@@ -1,6 +1,10 @@
 <template>
- <h1>header</h1>
- <AppNav />
+ <header  class="flex">
+    <h1>
+        Toy Store
+    </h1> 
+    <AppNav />
+ </header>
 </template>
 
 <script>
