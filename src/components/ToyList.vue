@@ -1,8 +1,10 @@
 
 <template>
     <ul class="toy-list">
-        <ToyPreview v-for="toy in toys" 
-        :key="toy.id" :toy="toy"
+        <ToyPreview 
+        v-for="toy in toys" 
+        :key="toy.id" 
+        :toy="toy"
         @remove="$emit('remove',$event)"
         />
     </ul>
@@ -12,7 +14,10 @@
 import ToyPreview from './ToyPreview.vue'
 export default {
         name: 'ToyList',
-        props: ['toys'],
+        props: {
+            toys: Array,
+            required: true
+        },
         components: {
                 ToyPreview
         },

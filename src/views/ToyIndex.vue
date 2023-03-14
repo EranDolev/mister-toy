@@ -1,11 +1,10 @@
 <template>
- <h1>
-  toy index
- </h1>
- {{ msg }}
-    <AppFilter @filter="setFilter"/> 
-    <ToyList v-if="toys" :toys="toys"></ToyList>
-
+    <h1>
+        toy index
+    </h1>
+    {{ msg }}
+    <AppFilter @filter="setFilter" />
+    <ToyList v-if="toys" :toys="toys"/>
 </template>
 
 <script>
@@ -13,8 +12,8 @@ import ToyList from '../components/ToyList.vue'
 import AppFilter from '../components/AppFilter.vue'
 
 export default {
- name: 'ToyIndex',
- created() {
+    name: 'ToyIndex',
+    created() {
         this.$store.dispatch({ type: 'loadToys' })
     },
     methods: {
@@ -23,15 +22,15 @@ export default {
 
         },
     },
- computed: {
-  msg() {
-   return this.$store.getters.getMsg
-  },
-  toys() {
+    computed: {
+        msg() {
+            return this.$store.getters.getMsg
+        },
+        toys() {
             return this.$store.getters.toys
         }
- },
- components: {
+    },
+    components: {
         ToyList,
         AppFilter
     },

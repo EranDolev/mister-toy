@@ -17,7 +17,7 @@
 <script>
 export default {
     name: 'AppFilter',
-    emit: ['filter'],
+    emits: ['filter'],
     props: [],
     components: {},
     created() { },
