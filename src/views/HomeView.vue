@@ -11,7 +11,7 @@
       </h1>
       <router-link class="home__btn" to="/toy">Get inside</router-link>
     </div>
-    <img class="home__img" src="../assets/Toy Pic.jpg" />
+    <!-- <img class="home__img" src="../assets/Toy Pic.jpg" /> -->
   </main>
 </template>
 
