@@ -6,22 +6,26 @@ export const toyStore = {
         toys: [],
         filter: {
             name: '',
-            // by: 'ALL',
+            labels: '',
         },
+        labels: ["Doll", "Battery Powered", "Baby"],
     },
     getters: {
         getMsg(state) {
             return state.msg
         },
         toys({ toys, filter }) {
-            if (!filter) return toys
+            // if (!filter) return toys
 
-            const regex = new RegExp(filter.name, 'i')
-            toys = toys.filter(toy => {
-                return regex.test(toy.name)
-            })
+            // const regex = new RegExp(filter.name, 'i')
+            // toys = toys.filter(toy => {
+            //     return regex.test(toy.name)
+            // })
 
             return toys
+        },
+        labels(state) {
+            return state.labels
         },
     },
     mutations: {
@@ -54,6 +58,7 @@ export const toyStore = {
     },
     actions: {
         loadToys({ commit }, { filter }) {
+            // console.log(filter)
             return toyService.query(filter)
                 .then(toys => {
                     console.log(toys)

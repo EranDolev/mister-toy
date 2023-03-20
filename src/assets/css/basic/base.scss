@@ -20,24 +20,27 @@ ul {
     list-style-type: none;
 }
 
-.toy-preview {
-    margin: 50px;
-    padding: 20px;
-    border: 1px solid blueviolet;
-    background-color: lightsalmon;
-}
-
-.toy-list {
-    flex-wrap: wrap;
-    align-items: center;
-}
 
 li {
     position: relative;
+    button {
+        background-color: rgb(228, 82, 82);
+        position: absolute;
+        right: 1px;
+        top: 1px;
+        cursor: pointer;
+    }
 }
 
-li button {
-    background-color: rgb(228, 82, 82);
-    position: absolute;
-    cursor: pointer;
+.btn {
+    display: block;
+    width: 100px;
+    height: 1em;
+    background: #4E9CAF;
+    padding: 1em;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    margin: 5px 0;
 }

@@ -4,6 +4,10 @@ import About from './../views/AboutView.vue'
 import ToyIndex from './../views/ToyIndex.vue'
 import ToyDetails from './../views/ToyDetails.vue'
 import ToyEdit from './../views/ToyEdit.vue'
+import login from './../views/Login.vue'
+import map from './../components/ToyMap.vue'
+import Chart from './../components/ToyChart.vue'
+import userDetails from './../views/UserDetails.vue'
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -17,6 +21,26 @@ const router = createRouter({
       path: '/about',
       name: 'about',
       component: About
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: login,
+    },
+    {
+      path: '/user',
+      name: 'user-detials',
+      component: userDetails,
+    },
+    {
+      path: '/map',
+      name: 'map',
+      component: map
+    },
+    {
+      path: '/chart',
+      name: 'chart',
+      component: Chart
     },
     {
       path: '/toy',

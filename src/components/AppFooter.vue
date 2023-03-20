@@ -1,5 +1,9 @@
 <template>
- <h1>footer</h1>
+    <footer>
+        <h2>
+            Created By: Eran Dolev
+        </h2> 
+    </footer>
 </template>
 
 <script>
